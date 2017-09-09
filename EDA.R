@@ -12,7 +12,7 @@
 library(readr)
 fb <- read_csv("~/Documents/CASR-buffer/buffer_90_days_export.csv", 
                     col_types = cols(X8 = col_skip()), skip = 1)
-fb2 <- fb %>% 
+fb <- fb %>% 
   mutate(Date=as.POSIXct(Date, format="%m/%d/%Y %I:%M %p")) %>% 
   separate(Date,c("Date", "Time"), sep = " ", remove = TRUE, extra= "merge")
 
